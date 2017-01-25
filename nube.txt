@@ -1,0 +1,42 @@
+/**********************************************************************************/
+/**********************************************************************************/
+/******************  ESTE ES EL ESCRIPT PARA EL OUNCLOUD **************************/
+/**********************************************************************************/
+/**********************************************************************************/
+1. PASO 1: update el server
+~$ apt-get update
+
+2. PASO 2: Instalar LAMP Server
+~$ apt-get install lamp-server^
+
+3. PASO 3: DESCARGAR EL RELEASE KEY DE OWNCLOUD
+~$ curl https://download.owncloud.org/download/repositories/stable/Ubuntu_16.04/Release.key | sudo apt-key add -
+
+4. PASO 4: IM'PORTAR EL KEY A UBUNTU
+~$ echo 'deb http://download.owncloud.org/download/repositories/stable/Ubuntu_16.04/ /' | sudo tee /etc/apt/sources.list.d/owncloud.list
+
+5. PASO 5: Actualizar el sistema
+~$ apt-get update
+
+6. PASO 6: Insatalar Owncloud
+~$ apt-get install owncloud
+
+7. PASO 7: Reiniciar APACHE Server
+~$ systemctl restart apache2.service
+
+8. PASO 8: Configuramos MySQL
+~$ mysql -u root -p
+
+SCRIPT EN MYSQL
+#create database owncloud
+#grant all on owncloud.* to 'owncloud'@'localhost' identified by 'anand';
+#flush privileges;
+#exit
+
+** Abrir un navegador e ingresar a:
+# https://MI-IP/owncloud
+
+/**********************************************************************************/
+/**********************************************************************************/
+/**********************************************************************************/
+/**********************************************************************************/
